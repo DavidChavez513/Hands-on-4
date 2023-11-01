@@ -25,35 +25,30 @@ Este programa estara desarrollado en Java, por lo que se utilizara el siguiente 
 
 interface DiscretMaths {
     + DiscretMaths() // Constructor
-    + RiemmanSum(array a, array b, int n, int function): return double
+    + RiemmanSum(double[] data): return double
+    + multiply(double[][] dataMatrix): return double
     + factorial(int n): return int
     + combination() : return int // Pendiente de uso
-    + derivate(): return double
-    + integrate(): return double
     + permutation(): return int
-    + pascalTriangle(int n) : return int[][]
 }
 
 class DataSet {
-    - data: File
-    + Data()
-    + getData()
+    - data: int[][]
+    + getDataMatrix(): return int[][]
 }
 
 interface LinearAlgebra {
-    - matrix: double[][]
-    - dataSet: DataSet
     + LinearAlgebra()
-    + getMatrix()
-    + setMatrix()
     + getRow(double[][] matrix) : return double[]
     + getColumn(double[][] matrix) : return double[]
-    + getDeterminant(double[][] matrix) : return double [][]
-    + getInverse(double[][] matrix): return double[][]
-    + getTranspose(double[][] matrix): return double[][]
+    + determinant(double[][] matrix) : return double [][]
+    + inverse(double[][] matrix): return double[][]
+    + transpose(double[][] matrix): return double[][]
+    + minor(double[][] matrix, int row, int column): return double[][]
 
     + cramerResolution() : return double[][]
     + gaussJordanResolution() : return double[][]
+    + powVector(double[] vector, int pow): return double[]
 
 }
 
@@ -64,9 +59,10 @@ class LinearRegression {
     - beta1: double
     - earring: double
     + LinearRegression()
-    + optimize(): return double
+    + calculateBeta0(): return double
+    + calculateBeta1(): return double
+    + calculateYHat(): return double
     + predict(): return double
-    + calculateEarring(): return double
     + calculateError(): return double
     + getError(): return double
     + getBeta0(): return double
